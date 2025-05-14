@@ -3,36 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DVOQueue</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <title>Contact Us - DVOQueue</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="navbar">
     <div class="logo">DVOQueue</div>
     <nav>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="contact.html">Contact Us</a>
       <a href="login.html" class="auth-btn">Sign In / Up</a>
       <a href="signup.html" class="get-started">Get Started</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Cutting-Edge Crowd Management System</h1>
-      <h2>For Exceptional Public Service</h2>
-      <p>
-        DVOQueue is a cloud-based virtual queuing system that improves public service delivery,
-        reduces wait times, and empowers organizations with real-time updates and smart booking.
-      </p>
-      <a href="signup.html" class="get-started">Get Started</a>
-    </div>
-    <div class="hero-image">
-      <img src="illustration.png" alt="Illustration"/>
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-image">
+        <img src="illustration.png" alt="Contact Illustration" />
+      </div>
+      <div class="contact-form">
+        <h3>Get in Touch with <span style="color:#fa5d5d;">DVOQueue</span></h3>
+        <form>
+          <div style="display: flex; gap: 1rem;">
+            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="Last Name" required />
+          </div>
+          <input type="email" placeholder="Your Email" required />
+          <input type="tel" placeholder="Phone number (+63 9123456789)" required />
+          <textarea placeholder="Message" required></textarea>
+          <label style="display:flex;align-items:center;gap:8px;margin:10px 0;">
+            <input type="checkbox" /> I agree to receive updates from DVOQueue.
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </section>
-
-  <!-- ✅ Removed inline #contact section -->
 
   <footer class="footer">
     <div class="footer-cols">
