@@ -18,11 +18,11 @@
         <main>
             <div class="dropdown">
                 <label for="service-selected">SERVICE SELECTED</label>
-                <select id="service-selected">
-                    <option value="">Select Service</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
+               <select id="service-selected">
+                <option value="">Select Service</option>
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
                 </select>
             </div>
             <div class="dropdown">
@@ -43,13 +43,9 @@
                     <option value="time3">Time 3</option>
                 </select>
             </div>
-            <button class="book-button" onclick="goToConfirmation()">BOOK</button>
+            <button class="book-button" onclick="submitBooking()">BOOK</button>
 
-            <script>
-                function goToConfirmation() {
-                window.location.href = "confirmation.html";
-            }
-            </script>
+           <script src="Book.js"></script>
         </main>
     </div>
 </body>
