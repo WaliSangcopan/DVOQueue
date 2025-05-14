@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service Booking</title>
+  <link rel="stylesheet" href="Book.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button class="back-button" onclick="goBack()">←</button>
+      <div class="title-section">
+        <h1>SERVICE NAME</h1>
+        <p>REGION XI</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="dropdown">
+        <label for="service-selected">SERVICE SELECTED</label>
+        <select id="service-selected">
+          <option value="">Select Service</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <label for="transport-type">Transport type Selected</label>
+        <select id="transport-type">
+          <option value="">Select Type</option>
+          <option value="type1">Type 1</option>
+          <option value="type2">Type 2</option>
+          <option value="type3">Type 3</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <label for="time-selected">Time Selected</label>
+        <select id="time-selected">
+          <option value="">Select Time</option>
+          <option value="time1">Time 1</option>
+          <option value="time2">Time 2</option>
+          <option value="time3">Time 3</option>
+        </select>
+      </div>
+
+      <button class="book-button" onclick="goToConfirmation()">BOOK</button>
+    </main>
+  </div>
+
+  <script>
+    function goToConfirmation() {
+      window.location.href = "confirmation.html";
+    }
+
+    function goBack() {
+      window.location.href = "service-details.html";
+    }
+  </script>
+</body>
+</html>

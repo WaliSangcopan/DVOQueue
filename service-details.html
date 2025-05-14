@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Details</title>
+    <link rel="stylesheet" href="service-details.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <body>
+    <div class="page-container">
+      <div class="content-wrapper">
+        <div class="header">
+          <div class="header-content"></div>
+        </div>
+        <div class="service-container">
+          <div class="service-banner">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d7f759758346363d3af4ba0dc48790e1ebdb2e9f"
+              alt="Service Image"
+              class="service-image"
+            />
+          </div>
+          <div class="service-details-card">
+            <div class="service-info-box">
+              <div class="service-info-header">
+                <div class="service-name">Sample Service Name</div>
+                <img
+                  src="C:\Users\PC\DVOQueue\assets\logo.png"
+                  alt="Service Icon"
+                  class="service-icon"
+                />
+              </div>
+            </div>
+            <div class="branches-title">BRANCHES</div>
+            <div class="branch-item">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3ba676de6437223c7e67b2232365c611369423f"
+                alt="Branch Icon"
+                class="branch-icon"
+              />
+              <div class="branch-label">Branches</div>
+            </div>
+            <div class="branch-details-box">
+              <div class="branch-info">
+                <div class="branch-region">REGION XI</div>
+                <div class="branch-distance">9.9 km</div>
+              </div>
+              <button class="book-button">BOOK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const bookButton = document.querySelector('.book-button');
+        if (bookButton) {
+          bookButton.addEventListener('click', function () {
+            // Redirect to booking page
+            window.location.href = 'Book.html';
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
