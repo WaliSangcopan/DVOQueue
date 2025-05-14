@@ -1,90 +1,102 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8;
     margin: 0;
-    color: #333;
+    padding: 30px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     height: 100vh;
 }
 
-.container {
-    max-width: 500px;
-    width: 100%;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
 header {
-    position: relative;
-    text-align: center;
-    padding-top: 1.5rem;
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
 }
 
 h1 {
-    font-size: 1.75rem;
-    margin: 0;
-    color: #333;
+    font-size: 36px;
 }
 
 .back-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 1.25rem;
     background: none;
     border: none;
     cursor: pointer;
+    font-size: 30px;
 }
 
 .title-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+}
+
+.title-section h1 {
+    margin: 0;
 }
 
 .title-section p {
-    margin: 5px 0 0 0;
-    font-size: 1rem;
+    margin: 0;
+    font-size: 1.5em;
     color: gray;
 }
 
+main {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 50px;
+}
+
 .dropdown {
-    margin: 1.5rem 0;
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
-    margin-bottom: 0.5rem;
     font-weight: bold;
-    font-size: 1rem;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 select {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1rem;
+    padding: 16px; /* increased padding for more height */
+    font-size: 18px;
+    border-radius: 14px; /* smoother corners */
     border: 1px solid #ccc;
-    border-radius: 6px;
+    width: 100%;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%236c63ff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
 .book-button {
     width: 100%;
-    padding: 1rem;
-    background-color: #6c5ce7;
+    padding: 16px;
+    background-color: black;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
 }
 
 .book-button:hover {
-    background-color: #5a54e1;
+    background-color: red;
 }
