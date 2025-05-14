@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +16,29 @@
     <section class="services">
       <h3>Select a Service</h3>
       <div class="service-list">
-        <div class="service-card" onclick="prefillService('TESDA - DCDO')">
-          <h4>TESDA - DCDO</h4>
-          <p>Vocational training and skills certification</p>
+        <div class="service-card" onclick="prefillService('Transportation - DCOTT')">
+          <h4>Transportation</h4>
+          <p>Davao City Overland Transport Terminal (DCOTT)</p>
         </div>
-        <div class="service-card" onclick="prefillService('SMU OUR')">
-          <h4>SMU OUR</h4>
-          <p>Office of the University Registrar services</p>
+        <div class="service-card" onclick="prefillService('Healthcare - SPMC')">
+          <h4>Healthcare</h4>
+          <p>Southern Philippines Medical Center (SPMC)</p>
+        </div>
+        <div class="service-card" onclick="prefillService('Education - DepEd Davao')">
+          <h4>Education</h4>
+          <p>Public elementary and high schools (DepEd Davao)</p>
+        </div>
+        <div class="service-card" onclick="prefillService('Emergency - Central 911')">
+          <h4>Emergency and Safety</h4>
+          <p>Davao City Central 911</p>
+        </div>
+        <div class="service-card" onclick="prefillService('Utilities - DCWD')">
+          <h4>Utilities</h4>
+          <p>Davao City Water District (DCWD)</p>
+        </div>
+        <div class="service-card" onclick="prefillService('Social Welfare - DSWD Region XI')">
+          <h4>Social Welfare</h4>
+          <p>DSWD Region XI (4Ps Program)</p>
         </div>
       </div>
     </section>
@@ -59,7 +74,7 @@
     onAuthStateChanged(auth, user => {
       if (!user) {
         alert("Please log in to access the dashboard.");
-        window.location.href = "index.html";
+        window.location.href = "login.html";
       } else {
         document.getElementById("userWelcome").innerText = "Welcome, " + user.email;
       }

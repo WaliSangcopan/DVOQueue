@@ -22,39 +22,47 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Sign up
+// Sign Up Function
 window.register = () => {
-  const email = document.getElementById("regEmail").value;
-  const password = document.getElementById("regPassword").value;
+  const email = document.getElementById("regEmail")?.value;
+  const password = document.getElementById("regPassword")?.value;
+
+  if (!email || !password) return alert("Please fill in all fields.");
+
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       alert("Account created!");
-      window.location.href = "dashboard.html"; // ✅ Redirect after signup (optional)
+      window.location.href = "login.html"; // Redirect to login after signup
     })
     .catch(error => alert(error.message));
 };
 
-// Sign in
+// Sign In Function
 window.login = () => {
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
+  const email = document.getElementById("loginEmail")?.value;
+  const password = document.getElementById("loginPassword")?.value;
+
+  if (!email || !password) return alert("Please enter email and password.");
+
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       alert("Logged in!");
-      window.location.href = "dashboard.html"; // ✅ Redirect to dashboard
+      window.location.href = "dashboard.html"; // Redirect to dashboard after login
     })
     .catch(error => alert(error.message));
 };
 
-// Log out
+// Log Out Function
 window.logout = () => {
-  signOut(auth).then(() => {
-    alert("Logged out!");
-    window.location.href = "index.html"; // Optional: return to homepage
-  });
+  signOut(auth)
+    .then(() => {
+      alert("Logged out!");
+      window.location.href = "index.html"; // Optional: go to homepage
+    })
+    .catch(error => alert("Logout failed: " + error.message));
 };
 
-// Display user
+// Display Welcome Message (optional)
 onAuthStateChanged(auth, user => {
   const display = document.getElementById("userDisplay");
   if (display) {
