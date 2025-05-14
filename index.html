@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DVOQueue</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">DVOQueue</div>
+    <nav>
+      <a href="#" onclick="scrollToSection('home')">Home</a>
+      <a href="#" onclick="scrollToSection('contact')">Contact Us</a>
+      <button class="auth-btn" onclick="showForm()">Sign In / Up</button>
+      <button class="get-started" onclick="showForm()">Get Started</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Cutting-Edge Crowd Management System</h1>
+      <h2>For Exceptional Public Service</h2>
+      <p>DVOQueue is a cloud-based virtual queuing system that improves public service delivery, reduces wait times, and empowers organizations with real-time updates and smart booking.</p>
+      <button class="get-started" onclick="showForm()">Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="illustration.png" alt="Illustration"/>
+    </div>
+  </section>
+
+  <!-- Sign Up / Login Form -->
+  <section class="form-section" id="formSection" style="display: none;">
+    <div class="form-container">
+      <div class="form-card">
+        <h2>Create Account</h2>
+        <input type="text" placeholder="Name" id="regName"/>
+        <input type="email" placeholder="Email" id="regEmail"/>
+        <input type="password" placeholder="Password" id="regPassword"/>
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+      </div>
+
+      <div class="form-card" id="loginForm">
+        <h2>Sign In</h2>
+        <input type="email" placeholder="Email" id="loginEmail"/>
+        <input type="password" placeholder="Password" id="loginPassword"/>
+        <button onclick="login()">Login</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Placeholder) -->
+  <section id="contact" style="text-align: center; padding: 2rem;">
+    <h2>Contact Us</h2>
+    <p>Email: support@dvoqueue.ph</p>
+    <p>Phone: +63 912 345 6789</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-cols">
+      <div>
+        <h3>DVOQueue</h3>
+        <p>Smart queueing for a smarter city</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li>Virtual Queues</li>
+          <li>Appointments</li>
+          <li>Real-time Status</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>📘 📸 🐦</p>
+      </div>
+    </div>
+    <div class="copyright">©2025 DVOQueue Technologies</div>
+  </footer>
+
+  <!-- Auth UI -->
+  <div id="userDisplay" style="display:none; text-align:center; margin: 20px; font-weight: bold;"></div>
+
+  <!-- Scripts -->
+  <script>
+    function showForm() {
+      document.getElementById('formSection').style.display = 'block';
+      document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleForm(type) {
+      const form = document.getElementById('loginForm');
+      if (form) form.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+  <script src="app.js"></script>
+  <script type="module" src="firebase-auth.js"></script>
+</body>
+</html>

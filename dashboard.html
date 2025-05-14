@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DVOQueue Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header class="dash-header">
+    <h2>DVOQueue Dashboard</h2>
+    <p id="userWelcome">Loading user...</p>
+  </header>
+
+  <main class="dash-main">
+    <section class="services">
+      <h3>Select a Service</h3>
+      <div class="service-list">
+        <div class="service-card" onclick="prefillService('TESDA - DCDO')">
+          <h4>TESDA - DCDO</h4>
+          <p>Vocational training and skills certification</p>
+        </div>
+        <div class="service-card" onclick="prefillService('SMU OUR')">
+          <h4>SMU OUR</h4>
+          <p>Office of the University Registrar services</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-form">
+      <h3>Book Your Slot</h3>
+      <form id="bookingForm">
+        <input type="text" id="serviceName" placeholder="Service Name" required readonly />
+        <input type="time" id="bookingTime" required />
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCNRgcBUInxilBTlvaLCxHVXiLlq8iTUPA",
+      authDomain: "dvoqueue.firebaseapp.com",
+      projectId: "dvoqueue",
+      storageBucket: "dvoqueue.appspot.com",
+      messagingSenderId: "983411204177",
+      appId: "1:983411204177:web:5c79aed718bb68b3f79870"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    onAuthStateChanged(auth, user => {
+      if (!user) {
+        alert("Please log in to access the dashboard.");
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("userWelcome").innerText = "Welcome, " + user.email;
+      }
+    });
+
+    window.prefillService = (serviceName) => {
+      document.getElementById("serviceName").value = serviceName;
+      document.getElementById("bookingTime").focus();
+    };
+
+    document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const service = document.getElementById("serviceName").value;
+      const time = document.getElementById("bookingTime").value;
+      const user = auth.currentUser;
+
+      if (!user) return;
+
+      try {
+        await addDoc(collection(db, "bookings"), {
+          uid: user.uid,
+          email: user.email,
+          service,
+          time,
+          createdAt: new Date()
+        });
+        alert("Booking saved!");
+        document.getElementById("bookingForm").reset();
+      } catch (err) {
+        alert("Failed to save booking: " + err.message);
+      }
+    });
+  </script>
+</body>
+</html>
