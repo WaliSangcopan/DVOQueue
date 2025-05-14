@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #fff;
-  color: #222;
+  background: #e9e6e6;
+  color: #f7f4f4;
 }
 
 .navbar {
@@ -84,59 +84,87 @@ body {
   width: 300px;
 }
 
-.form-card input,
-.password-wrapper input {
-  display: block;
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-  height: 42px;
+.features, .how-it-works, .testimonials {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.password-wrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 1rem;
+.features h2,
+.how-it-works h2,
+.testimonials h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
-.password-wrapper input {
-  padding-right: 2.5rem; /* space for eye icon */
+.features-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.toggle-password {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
+.feature-card {
+  background: #dad3d3;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+}
+
+.feature-card h3 {
+  color: #7b61ff;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: #444;
+}
+
+.how-it-works .steps {
+  list-style-type: decimal;
+  padding-left: 2rem;
   font-size: 1.1rem;
   color: #555;
-  opacity: 0.8;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.form-card button {
-  background: #7b61ff;
-  color: white;
-  padding: 0.6rem;
-  border: none;
+.how-it-works .steps li {
+  margin-bottom: 1rem;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background: #dad3d3;
+  padding: 1.5rem;
+  border-left: 4px solid #7b61ff;
   border-radius: 6px;
-  width: 100%;
-  font-weight: bold;
 }
 
-::placeholder {
-  font-size: 1rem;
-  color: #888;
-  font-family: 'Segoe UI', sans-serif;
+.testimonial p {
+  font-style: italic;
+  color: #333;
+}
+
+.testimonial h4 {
+  margin-top: 1rem;
+  font-weight: normal;
+  color: #666;
 }
 
 .footer {
-  background: #eee;
+  background: #fa5d5d;
   padding: 2rem;
   margin-top: 4rem;
 }
