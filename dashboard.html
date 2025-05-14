@@ -5,53 +5,229 @@
   <title>DVOQueue Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="dashboard.css" />
-</head>
-<body>
-  <header class="dash-header">
-    <h2>DVOQueue Dashboard</h2>
-    <p id="userWelcome">Loading user...</p>
-  </header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .promo-button {
+        cursor: pointer;
+        padding: 10px 16px;
+        background-color: #ffc107;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        width: fit-content;
+        margin-top: 10px;
+      }
+      .promo-button.yellow {
+        background-color: #ffca28;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <header class="main-header">
+        <div class="header-left">
+          <div class="logo">Dashboard</div>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item active"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">Directory</a></li>
+            <li class="nav-item"><a href="#">Tickets</a></li>
+            <li class="nav-item"><a href="#">Profile</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <div class="search-container">
+            <input type="text" placeholder="Search" class="search-input" />
+            <div class="search-icon">
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3.21556 6.07171C4.34464 3.36054 6.99011 1.59144 9.92698 1.5836C13.0922 1.56693 15.9067 3.59437 16.8933 6.60195C17.88 9.60952 16.8135 12.9102 14.2535 14.7717C11.6935 16.6333 8.22483 16.6305 5.66781 14.7648L3.38781 17.0448C3.156 17.2764 2.78046 17.2764 2.54864 17.0448C2.31712 16.813 2.31712 16.4375 2.54864 16.2057L4.75739 13.9969C2.69423 11.9068 2.08648 8.78288 3.21556 6.07171ZM4.27414 11.2173C5.22214 13.5018 7.4536 14.9897 9.92698 14.9865V14.9549C13.2839 14.9506 16.009 12.2396 16.0307 8.88277C16.0339 6.40939 14.546 4.17792 12.2616 3.22992C9.97706 2.28192 7.34641 2.80431 5.59747 4.55325C3.84852 6.3022 3.32614 8.93285 4.27414 11.2173Z"
+                  fill="black"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="user-info">
+            <span class="welcome-message">Welcome, User</span>
+            <div class="profile-avatar"></div>
+          </div>
+        </div>
+      </header>
 
-  <main class="dash-main">
-    <section class="services">
-      <h3>Select a Service</h3>
-      <div class="service-list">
-        <div class="service-card" onclick="prefillService('Transportation - DCOTT')">
-          <h4>Transportation</h4>
-          <p>Davao City Overland Transport Terminal (DCOTT)</p>
+      <div class="content-wrapper">
+        <div class="promo-section">
+          <div class="promo-cards">
+            <div class="promo-card-wrapper">
+              <div class="promo-card red">
+                <div class="promo-content">
+                  <div class="promo-title">Book Now Your First Ticket</div>
+                  <div class="promo-button">Book Now</div>
+                </div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"
+                  alt="Profile"
+                  class="promo-image"
+                />
+              </div>
+            </div>
+            <div class="promo-card-wrapper">
+              <div class="promo-card pink">
+                <div class="promo-content">
+                  <div class="promo-title">Book Now Your First Ticket</div>
+                  <div class="promo-button yellow">Book Now</div>
+                </div>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f"
+                  alt="Profile"
+                  class="promo-image-alt"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="service-card" onclick="prefillService('Healthcare - SPMC')">
-          <h4>Healthcare</h4>
-          <p>Southern Philippines Medical Center (SPMC)</p>
-        </div>
-        <div class="service-card" onclick="prefillService('Education - DepEd Davao')">
-          <h4>Education</h4>
-          <p>Public elementary and high schools (DepEd Davao)</p>
-        </div>
-        <div class="service-card" onclick="prefillService('Emergency - Central 911')">
-          <h4>Emergency and Safety</h4>
-          <p>Davao City Central 911</p>
-        </div>
-        <div class="service-card" onclick="prefillService('Utilities - DCWD')">
-          <h4>Utilities</h4>
-          <p>Davao City Water District (DCWD)</p>
-        </div>
-        <div class="service-card" onclick="prefillService('Social Welfare - DSWD Region XI')">
-          <h4>Social Welfare</h4>
-          <p>DSWD Region XI (4Ps Program)</p>
+
+        <div class="main-content">
+          <section class="services-section">
+            <div class="section-header">
+              <h2 class="section-title">Public Services</h2>
+              <div class="see-all">See all</div>
+            </div>
+
+            <div class="category-tabs">
+              <div class="category-tab active">All</div>
+              <div class="category-tab">Public Services</div>
+              <div class="category-tab">Education</div>
+            </div>
+
+            <div class="services-grid">
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Library Access</div>
+                <div class="service-branches">1 Branches</div>
+              </div>
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Health Center</div>
+                <div class="service-branches">2 Branches</div>
+              </div>
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Fire Department</div>
+                <div class="service-branches">3 Branches</div>
+              </div>
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Education Office</div>
+                <div class="service-branches">1 Branches</div>
+              </div>
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Water Services</div>
+                <div class="service-branches">1 Branches</div>
+              </div>
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Community Hall</div>
+                <div class="service-branches">1 Branches</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="education-section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Local School</div>
+                <div class="service-branches">1 Branches</div>
+              </div>
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Online Courses</div>
+                <div class="service-branches">2 Branches</div>
+              </div>
+              <div class="service-card">
+                <div class="service-image"></div>
+                <div class="service-name">Community Education</div>
+                <div class="service-branches">1 Branches</div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="booking-form">
-      <h3>Book Your Slot</h3>
-      <form id="bookingForm">
-        <input type="text" id="serviceName" placeholder="Service Name" required readonly />
-        <input type="time" id="bookingTime" required />
-        <button type="submit">Book Now</button>
-      </form>
-    </section>
-  </main>
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+      // Nav item active state
+      document.querySelectorAll('.nav-item a').forEach(link => {
+        link.addEventListener('click', e => {
+          document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+          e.target.parentElement.classList.add('active');
+        });
+      });
+
+      // Category filtering
+      const tabs = document.querySelectorAll('.category-tab');
+      const allCards = document.querySelectorAll('.services-grid .service-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const category = tab.textContent.trim().toLowerCase();
+
+          allCards.forEach(card => {
+            const name = card.querySelector('.service-name').textContent.toLowerCase();
+            if (
+              category === 'all' ||
+              (category === 'public services' && !name.includes('education')) ||
+              (category === 'education' && name.includes('education'))
+            ) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Promo button click
+      document.querySelectorAll('.promo-button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          alert('Promo button clicked!');
+        });
+      });
+
+      // Search filter
+      const searchInput = document.querySelector('.search-input');
+      searchInput.addEventListener('input', () => {
+        const filter = searchInput.value.toLowerCase();
+        allCards.forEach(card => {
+          const text = card.querySelector('.service-name').textContent.toLowerCase();
+          card.style.display = text.includes(filter) ? 'block' : 'none';
+        });
+      });
+    </script>
+  </body>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
