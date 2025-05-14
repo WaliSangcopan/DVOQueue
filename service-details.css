@@ -1,0 +1,219 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f1f2;
+}
+
+/* Page container */
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0f1f2;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Service container */
+.service-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Service banner */
+.service-banner {
+  width: 100%;
+  height: 320px;
+  background-color: #7c0000;
+  margin-top: 48px;
+  padding-left: 22px;
+  padding-right: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.service-image {
+  width: 181px;
+  height: 271px;
+  margin-top: 14px;
+  object-fit: contain;
+}
+
+/* Service details card */
+.service-details-card {
+  background-color: #ffffff;
+  border-radius: 20px 20px 0 0;
+  margin-top: 21px;
+  padding: 20px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Service info box */
+.service-info-box {
+  background-color: #f0f1f2;
+  border-radius: 32px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.service-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-name {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.service-icon {
+  width: 66px;
+  height: 69px;
+  margin-left: auto;
+}
+
+/* Branches section */
+.branches-title {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+
+.branch-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.branch-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.branch-label {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Branch details box */
+.branch-details-box {
+  background-color: #f0f1f2;
+  border-radius: 32px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.branch-region {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.branch-distance {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.book-button {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  background-color: #4241da;
+  border-radius: 32px;
+  padding: 11px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+  background-color: #3534b9;
+}
+
+/* Responsive styles for web */
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding: 0 20px;
+  }
+
+  .service-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-banner {
+    height: 400px;
+  }
+
+  .service-image {
+    width: 240px;
+    height: 360px;
+  }
+
+  .service-details-card {
+    border-radius: 20px;
+    margin: -80px auto 0;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .service-banner {
+    height: 500px;
+    border-radius: 20px;
+    margin-top: 0;
+  }
+
+  .service-details-card {
+    margin: 0;
+    border-radius: 20px;
+    height: fit-content;
+    align-self: center;
+  }
+}
