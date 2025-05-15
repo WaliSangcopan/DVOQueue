@@ -9,6 +9,7 @@
   <header class="navbar">
     <div class="logo">DVOQueue</div>
   </header>
+
   <section class="form-section">
     <div class="form-container">
       <div class="form-card">
@@ -24,17 +25,8 @@
       </div>
     </div>
   </section>
-  <script type="module" src="firebase-auth.js"></script>
-  <script>
-    function togglePassword(inputId, icon) {
-      const input = document.getElementById(inputId);
-      const isPassword = input.type === "password";
-      input.type = isPassword ? "text" : "password";
-      icon.textContent = isPassword ? "🙈" : "👁️";
-    }
-  </script>
-</body>
-<footer class="footer">
+
+  <footer class="footer">
     <div class="footer-cols">
       <div>
         <h3>DVOQueue</h3>
@@ -63,5 +55,15 @@
     </div>
     <div class="copyright">©2025 DVOQueue Technologies</div>
   </footer>
+
+  <script type="module" src="firebase-auth.js"></script>
+  <script>
+    function togglePassword(inputId, icon) {
+      const input = document.getElementById(inputId);
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      icon.textContent = isPassword ? "🙈" : "👁️";
+    }
+  </script>
 </body>
 </html>

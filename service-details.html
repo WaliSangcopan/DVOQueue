@@ -57,15 +57,19 @@
       </div>
     </div>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const bookButton = document.querySelector('.book-button');
-        if (bookButton) {
-          bookButton.addEventListener('click', function () {
-            // Redirect to booking page
-            window.location.href = 'Book.html';
-          });
-        }
-      });
-    </script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const bookButton = document.querySelector('.book-button');
+    const serviceName = localStorage.getItem("selectedServiceName") || "Sample Service Name";
+    
+    // Update the name on page
+    document.querySelector('.service-name').textContent = serviceName;
+
+    bookButton.addEventListener('click', function () {
+      // Pass along service name again
+      localStorage.setItem("selectedService", serviceName);
+      window.location.href = 'Book.html';
+    });
+  });
+</script>
   </body>
 </html>

@@ -1,66 +1,65 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
-    position: relative;
-    width: 400px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    padding: 2rem;
-    text-align: center;
+  width: 400px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  text-align: center;
 }
 
 .modal {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .checkmark-icon {
-    width: 70px;
-    height: 70px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    margin: 0 auto 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 32px;
+  width: 70px;
+  height: 70px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
 }
 
 h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .details {
-    margin: 20px 0;
-    font-size: 1.1rem;
+  margin: 20px 0;
+  font-size: 1.1rem;
 }
 
 .details p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .close-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 100%;
 }
 
 .close-button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }

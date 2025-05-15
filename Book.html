@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Booking</title>
-    <link rel="stylesheet" href="Book.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service Booking</title>
+  <link rel="stylesheet" href="Book.css" />
 </head>
 <body>
-   <header>
-        <div class="title-section">
-            <h1>SERVICE NAME</h1>
-            <p>REGION X1</p>
-        </div>
-    </header>
+  <header>
+    <div class="title-section">
+      <h1>SERVICE NAME</h1>
+      <p>REGION X1</p>
+    </div>
+  </header>
 
-    <main>
-        <div class="dropdown">
-            <label for="service-selected">SERVICE SELECTED</label>
-            <select id="service-selected">
-                <option value="">Select Service</option>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
-            </select>
-        </div>
-        <div class="dropdown">
-            <label for="transport-type">Transport type Selected</label>
-            <select id="transport-type">
-                <option value="">Select Type</option>
-                <option value="type1">Type 1</option>
-                <option value="type2">Type 2</option>
-                <option value="type3">Type 3</option>
-            </select>
-        </div>
-        <div class="dropdown">
-            <label for="time-selected">Time Selected</label>
-            <select id="time-selected">
-                <option value="">Select Time</option>
-                <option value="time1">Time 1</option>
-                <option value="time2">Time 2</option>
-                <option value="time3">Time 3</option>
-            </select>
-        </div>
-        <button class="book-button" onclick="submitBooking()">BOOK</button>
+  <main>
+    <div class="dropdown">
+      <label for="service-selected">SERVICE SELECTED</label>
+      <select id="service-selected">
+  <option value="">Select Service</option>
+  <option value="Library Access">Library Access</option>
+  <option value="Health Center">Health Center</option>
+  <option value="Fire Department">Fire Department</option>
+  <option value="Education Office">Education Office</option>
+  <option value="Water Services">Water Services</option>
+  <option value="Community Hall">Community Hall</option>
+</select>
+    </div>
 
-        <script src="Book.js"></script>
-    </main>
+    <div class="dropdown">
+      <label for="transport-type">Transport type Selected</label>
+      <select id="transport-type">
+        <option value="">Select Type</option>
+        <option value="Walk-In">Walk-In</option>
+        <option value="Online">Online</option>
+        <option value="Phone">Phone</option>
+      </select>
+    </div>
+
+    <div class="dropdown">
+      <label for="time-selected">Time Selected</label>
+      <select id="time-selected">
+        <option value="">Select Time</option>
+        <option value="9:00 AM">9:00 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="3:00 PM">3:00 PM</option>
+      </select>
+    </div>
+
+    <button class="book-button" onclick="submitBooking()">BOOK</button>
+  </main>
+<script>
+  // Prefill if available
+  document.addEventListener("DOMContentLoaded", function () {
+    const serviceFromStorage = localStorage.getItem("selectedService");
+    if (serviceFromStorage) {
+      document.getElementById("service-selected").value = serviceFromStorage;
+    }
+  });
+</script>
+  <script src="Book.js"></script>
 </body>
 </html>

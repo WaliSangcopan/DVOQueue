@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Confirmation</title>
-    <link rel="stylesheet" href="Confirmation.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Confirmation</title>
+  <link rel="stylesheet" href="Confirmation.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="modal">
-            <div class="checkmark-icon">
-                <!-- Placeholder for checkmark icon -->
-                ✓
-            </div>
-            <h1>Booking Confirmed!</h1>
-            <div class="details">
-                <p><strong>Service Name</strong></p>
-                <p>Region Name</p>
-                <p><strong>Ticket:</strong> MC002</p>
-                <p><strong>Booked for:</strong> 9:50 PM, 26 Mar</p>
-                <p><strong>Service:</strong> Customer Service</p>
-            </div>
-            <button class="close-button"><a href="./dashboard.html"> Close </a></button>
-        </div>
+  <div class="container">
+    <div class="modal">
+      <div class="checkmark-icon">✓</div>
+      <h1>Booking Confirmed!</h1>
+      <div class="details">
+        <p><strong>Service Name</strong></p>
+        <p>Region Name</p>
+        <p><strong>Ticket:</strong> <span id="ticketCode"></span></p>
+        <p><strong>Booked for:</strong> <span id="bookingTime"></span></p>
+        <p><strong>Service:</strong> <span id="bookingService"></span></p>
+        <p><strong>Type:</strong> <span id="bookingType"></span></p>
+      </div>
+      <button class="close-button"><a href="./dashboard.html">Close</a></button>
     </div>
+  </div>
+
+  <script>
+    document.getElementById("bookingService").innerText = localStorage.getItem("selectedService") || "—";
+    document.getElementById("bookingTime").innerText = localStorage.getItem("selectedTime") || "—";
+    document.getElementById("bookingType").innerText = localStorage.getItem("transportType") || "—";
+    document.getElementById("ticketCode").innerText = localStorage.getItem("ticketNumber") || "—";
+  </script>
 </body>
 </html>

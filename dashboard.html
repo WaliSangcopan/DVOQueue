@@ -230,15 +230,14 @@
   </body>
 
   <script>
-    // Handle clicking service cards
-    document.querySelectorAll('.service-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const serviceName = card.querySelector('.service-name').textContent.trim();
-        const encoded = encodeURIComponent(serviceName);
-        window.location.href = `./service-details.html#`;
-      });
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const serviceName = card.querySelector('.service-name').textContent.trim();
+      localStorage.setItem("selectedServiceName", serviceName);
+      window.location.href = "./service-details.html";
     });
-  </script>
+  });
+</script>
 
 
   <!-- <script type="module">
